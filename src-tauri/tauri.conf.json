@@ -1,0 +1,82 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build && npm run export",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:3000",
+    "distDir": "../out"
+  },
+  "package": {
+    "productName": "tauri-nextjs-api-routes",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "http": {
+        "all": true,
+        "scope": ["https://**"]
+      },
+      "shell": {
+        "all": true,
+        "execute": true,
+        "sidecar": true,
+        "open": true,
+        "scope": [
+          {
+            "name": "bin/server",
+            "sidecar": true
+          }
+        ]
+      }
+    },
+    "bundle": {
+      "externalBin": ["bin/server"],
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "resources": [],
+      "deb": {
+        "depends": []
+      },
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.tauri.dev.server.example",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 600,
+        "resizable": true,
+        "title": "tauri-nextjs-api-routes",
+        "width": 800
+      }
+    ]
+  }
+}

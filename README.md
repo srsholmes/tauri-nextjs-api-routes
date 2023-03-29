@@ -1,4 +1,4 @@
-# Next JS with Tauri Example
+# Next JS API routes with Tauri Example
 
 This repo demonstrates how you can use Next JS and Tauri together to build an application which can be deployed on the web, and also packaged up as a desktop application.
 Since Tauri usually doesn't support NextJS API routes, this example shows how to share code and logic between NextJS API routes and a local server used in the Tauri application.
